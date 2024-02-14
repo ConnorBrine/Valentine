@@ -1,0 +1,158 @@
+*, *::before, *::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+margin-left: 300px;
+background-color: white;
+box-sizing: border-box;
+position: relative;
+}
+.main{
+  display: flex;
+
+}
+.heart-container1{
+  margin: 1;
+  box-sizing: border-box;
+}
+
+.title-heart-outter{
+  margin-left: 600px;
+  font-size: 25px;
+  font-color: red;
+}
+.heart{
+  position: relative;
+  width: 200px;
+  height: 260px;
+  margin: 30vh auto;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  background-color: red;
+}
+.heart:before {
+  left: 48px;
+  background-color: red;
+  transform: rotate(50deg) 
+}
+.heart:after {
+  right: 23px;
+  transform: rotate(-50deg) 
+}
+
+.card{
+  background-color: rgba(0, 0, 0, .05);
+  box-shadow: -1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 40rem;
+  width: 40rem;
+  position: relative;
+  transition: all 1s ease;
+}
+.card-flip{
+  width: 40rem;
+  height: 40rem;
+  perspective: 50rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  z-index: 100;
+}
+.card-flip > *{
+  visibility: visible;  
+}
+.card-flip-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+.card-front,
+.card-back{
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.card-front{
+  background-color: #fafbfa;
+  height: 40rem;
+  width: 40rem;
+}
+.card-back{
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+}
+.letter{
+
+ background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 10rem 20rem rgba(0,0,0,0.05);
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+  right: 0;
+  transition: all 1s ease;
+  width: 40rem;
+  z-index: 1;
+}
+.letter-container{
+  background-color: #fafbfa;
+  left: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center; 
+  width: 100%;
+}
+
+
+.card:hover{
+  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 80rem;
+}
+  .card:hover {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
+}
+.card:hover .letter {
+
+}
+.font{
+  font-family: "Yellowtail", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+.small-text {
+  font-size: 40px;
+}
+@media only screen and (max-width: 600px) {
+  .heart-container1{
+    margin-top: -300px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .heart-container1{
+    margin-top: -330px;
+  }
+}
+@media screen and (min-width: 992px){
+  .heart-container1{
+    margin-top: -200px;
+  }
+}
